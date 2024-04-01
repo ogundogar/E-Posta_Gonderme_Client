@@ -1,27 +1,13 @@
-# EPostaGonderimClient
+VERİ TABANI
+Database’e bağlanmak için ORM aracı olan entity framework kullanıldı. Entity framework’ün code first yaklaşımı kullanılarak veri tabanı oluşturuldu. Code first yaklaşımı ile geliştirilmesi hem Microsoft.Entity.FrameworkCore kütüphanesinden türetilen DbContext sınıfı içerisindeki connection string ve provider’ı değiştirerek diğer veri tabanlarında da kullanmamız gerektiğinde veri tabanını hızlı bir şekilde oluşturulabilir hem de veri tabanındaki değişiklikleri kod kısmında yapılabilir. Veri tabanı 3 tablo ile oluşturuldu. 
+![image](https://github.com/ogundogar/E-Posta_Gonderme_Client/assets/92091170/28df4aa9-7427-42eb-ae90-7b5817349684)
+Bu tablolar;
+-Kullanıcı bilgilerinin sakladığı KullanıcıMailAdresleri tablosu
+-Şirket mail adreslerinin saklandığı SirketMailAdresleri tablosu
+-Yollanan mailleri sakladığı YollananMailler tablosu
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Tablolar arasındaki ilişkiler ve tablolardaki kolonlar şöyle;
+Tablolar arasında KullanıcıMailAdresleri tablosu ile YollananMailler tablosu arasında many to many ilişki oluşturuldu. SirketMailAdresleri tablosu ile YollananMailler tablosu arasında ise one to many ilişki oluşturuldu. KullanıcıMailAdresleri tablosu ile YollananMailler tablosu arasında many to many bir ilişki oluşturmanın sebebi bir kullanıcıya birden çok mail yollanabilir ve aynı şekilde bir mail birden fazla kullanıcıya yollanabilmesi. SirketMailAdresleri tablosu ve YollananMailler tablosu arasındaki ilişkinin one to many olmasının sebebi mailler sadece bir şirket mail’inden yollanması.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

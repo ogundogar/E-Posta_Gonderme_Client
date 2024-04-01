@@ -105,6 +105,7 @@ Yollanan Mailler tablosunda ekle butonuna basıldığında js dom kullanılarak 
 ![image](https://github.com/ogundogar/E-Posta_Gonderme_Client/assets/92091170/632df9e4-2ff0-4c26-99c4-1ea26bd4f09b)
 
 <h3>Tablolarda Filtreleme İşlemi</h3>
+
 ![image](https://github.com/ogundogar/E-Posta_Gonderme_Client/assets/92091170/151baa1f-5c44-4f83-b1f0-025df598b321)
 
 ![image](https://github.com/ogundogar/E-Posta_Gonderme_Client/assets/92091170/4292f4d3-d0cb-4ae4-8ddd-e87216596b50)
@@ -112,3 +113,29 @@ Yollanan Mailler tablosunda ekle butonuna basıldığında js dom kullanılarak 
 ![image](https://github.com/ogundogar/E-Posta_Gonderme_Client/assets/92091170/658ff2f6-9e5d-493b-8953-c243ef9e1816)
 
 KmaHttpClientService, SmaHttpClientService ve YmHttpClientService servicelerindeki getWhere() fonksiyonu buradaki değerleri parametrik olarak alıyor. Daha sonra query string olarak Controller’lar içindeki GetWhere() fonksiyona yolluyor. GetWhere() fonksiyonu filtreleme işlemini yaptıktan sonra response olarak sonucu dönüyor.
+
+<h1>Uygulama İçi Görseller</h1>
+
+<h4>Kullanici Ekleme İşlemi</h4>
+
+![image](https://github.com/ogundogar/E-Posta_Gonderme_API/assets/92091170/4294bb05-45d5-4e26-83c9-32a555c528b2)
+
+<h4>Kullanici Tablosunda Filtreleme İşlemi</h4>
+
+![image](https://github.com/ogundogar/E-Posta_Gonderme_API/assets/92091170/016512fe-a3b4-4578-a40a-6b16b1506f87)
+
+<h4>Kullanici Tablosunda Ekleme ve Filtreleme İşlemi Sonucu</h4>
+
+![image](https://github.com/ogundogar/E-Posta_Gonderme_API/assets/92091170/d651bc9b-ccce-46de-86fe-4aa63151dcb3)
+
+<h2>Toplu Mail Atma İşlemi</h2>
+
+![image](https://github.com/ogundogar/E-Posta_Gonderme_API/assets/92091170/a2a59c3d-a251-4205-8f61-94710c452afd)
+
+![image](https://github.com/ogundogar/E-Posta_Gonderme_API/assets/92091170/d52cf395-a1e6-4b24-a83c-c7f374bd9dda)
+![image](https://github.com/ogundogar/E-Posta_Gonderme_API/assets/92091170/97dc902f-5432-4d6e-9ebe-0917cc39eda0)
+![image](https://github.com/ogundogar/E-Posta_Gonderme_API/assets/92091170/a909a886-2679-4126-9eba-25bbc6a16832)
+
+
+
+

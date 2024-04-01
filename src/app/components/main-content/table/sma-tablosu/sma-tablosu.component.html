@@ -1,0 +1,79 @@
+<div class="panel">
+	<ul>
+		<li (click)="clickEkleme()">Ekle</li>
+		<li (click)="clickSilme()">Sil </li>
+		<li>
+			<div class="dropdown">
+			Filtrele
+			<div class="dropdown-content">
+			<input type="text" class="filtre" placeholder="Display Name" #txtDisplayName>
+		<input type="text" class="filtre" placeholder="Mail Adresi" #txtMailAdresi>
+		<input type="text" class="filtre" placeholder="Şifre" #txtSifre>
+		<input type="text" class="filtre" placeholder="Port Numarası" #txtPortNumarasi>
+		<input type="text" class="filtre" placeholder="Host" #txtHost>
+		<label for="sirala">Sondan-Başa</label><input type="checkbox" class="sirala" #txtSirala>
+		<button (click)="clickFiltrele(txtDisplayName,txtMailAdresi,txtSifre,txtPortNumarasi,txtHost,txtSirala)">Uygula</button>
+			</div>
+		  </div>
+		</li>
+	</ul>
+	</div>
+	<div class="mat-elevation-z8 ">
+		<table mat-table [dataSource]="dataSource" class="text-bg-dark">
+	  
+			<!-- Seçme Column -->
+		<ng-container matColumnDef="secme">
+			<th mat-header-cell *matHeaderCellDef> </th>
+			<td mat-cell *matCellDef="let element"> <input type="checkbox" id="secenek1" name="secenek1" (change)="onCheckboxChange($event,element.id)"> </td>
+		</ng-container>
+	
+		<ng-container matColumnDef="id">
+			<th mat-header-cell *matHeaderCellDef>id </th>
+			<td mat-cell *matCellDef="let element"> {{element.id}} </td>
+		</ng-container>
+	
+		  <!-- Display Name Column -->
+		  <ng-container matColumnDef="displayName">
+			<th mat-header-cell *matHeaderCellDef> DisplayName </th>
+			<td mat-cell *matCellDef="let element"> {{element.displayName}} </td>
+		  </ng-container>
+	  
+		  <!-- v Column -->
+		  <ng-container matColumnDef="mailAdresi">
+			<th mat-header-cell *matHeaderCellDef> Mail Adresi </th>
+			<td mat-cell *matCellDef="let element"> {{element.mailAdresi}} </td>
+		  </ng-container>
+	  
+		  <!-- Şifre Column -->
+		  <ng-container matColumnDef="sifre">
+			<th mat-header-cell *matHeaderCellDef> Şifre </th>
+			<td mat-cell *matCellDef="let element"> {{element.sifre}} </td>
+		  </ng-container>
+	  
+		  <!-- Port Numarası Column -->
+		  <ng-container matColumnDef="portNumarasi">
+			<th mat-header-cell *matHeaderCellDef> Port Numarası </th>
+			<td mat-cell *matCellDef="let element"> {{element.portNumarasi}} </td>
+		  </ng-container>
+	
+		  <!-- Host Column -->
+		  <ng-container matColumnDef="host">
+			<th mat-header-cell *matHeaderCellDef> Host </th>
+			<td mat-cell *matCellDef="let element"> {{element.host}} </td>
+		  </ng-container>
+	
+		  <!-- Açıklama Column -->
+		  <ng-container matColumnDef="aciklama">
+			<th mat-header-cell *matHeaderCellDef> Açıklama </th>
+			<td mat-cell *matCellDef="let element"> {{element.aciklama}} </td>
+		  </ng-container>
+	
+	  
+		  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+	
+	  </div>
+	  <div id="pencere">
+	</div>
+	

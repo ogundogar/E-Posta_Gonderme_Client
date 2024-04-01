@@ -1,0 +1,93 @@
+<div class="panel">
+<ul>
+	<li (click)="clickEkleme()">Ekle</li>
+	<li (click)="clickSilme()">Sil </li>
+	<li>
+		<div class="dropdown">
+		Filtrele
+		<div class="dropdown-content">
+		<input type="text" class="filtre" placeholder="Ad" #txtAd>
+	<input type="text" class="filtre" placeholder="Soyad" #txtSoyad>
+	<input type="text" class="filtre" placeholder="Mail Adresi" #txtMailAdresi>
+	<input type="text" class="filtre" placeholder="İş Yeri" #txtIsYeri>
+	<input type="text" class="filtre" placeholder="Unvan" #txtUnvan>
+	<label for="erkek">Erkek</label><input type="radio" name="cinsiyet" id="erkek" #txtErkek (click)="clickCinsiyet(txtErkek)">
+	<label for="kadin">Kadın</label><input type="radio" name="cinsiyet" id="kadin" #txtKadin (click)="clickCinsiyet(txtKadin)">
+	<label for="BaslangicTarihi">Başlangıç Tarihi</label><input type="date" class="filtre" #txtBasTarihi>
+	<label for="BitisTarihi">Bitiş Tarihi</label><input type="date" class="filtre" #txtBitTarihi>
+	<label for="sirala">Sondan-Başa</label><input type="checkbox" class="sirala" #txtSirala>
+	<button (click)="clickFiltrele(txtAd,txtSoyad,txtIsYeri,txtBasTarihi,txtBitTarihi,txtSirala)">Uygula</button>
+		</div>
+	  </div>
+	</li>
+</ul>
+</div>
+<div class="mat-elevation-z8 ">
+	<table mat-table [dataSource]="dataSource" class="text-bg-dark">
+  
+		<!-- Seçme Column -->
+	<ng-container matColumnDef="secme">
+		<th mat-header-cell *matHeaderCellDef> </th>
+		<td mat-cell *matCellDef="let element"> <input type="checkbox" id="secenek1" name="secenek1" (change)="onCheckboxChange($event,element.id)"> </td>
+	</ng-container>
+
+	<ng-container matColumnDef="id">
+		<th mat-header-cell *matHeaderCellDef>id </th>
+		<td mat-cell *matCellDef="let element"> {{element.id}} </td>
+	</ng-container>
+
+	  <!-- Ad Column -->
+	  <ng-container matColumnDef="ad">
+		<th mat-header-cell *matHeaderCellDef> Ad </th>
+		<td mat-cell *matCellDef="let element"> {{element.ad}} </td>
+	  </ng-container>
+  
+	  <!-- Soyad Column -->
+	  <ng-container matColumnDef="soyad">
+		<th mat-header-cell *matHeaderCellDef> Soyad </th>
+		<td mat-cell *matCellDef="let element"> {{element.soyad}} </td>
+	  </ng-container>
+  
+	  <!-- Mail Adresi Column -->
+	  <ng-container matColumnDef="mailAdresi">
+		<th mat-header-cell *matHeaderCellDef> Mail Adresi </th>
+		<td mat-cell *matCellDef="let element"> {{element.mailAdresi}} </td>
+	  </ng-container>
+  
+	  <!-- Doğum Tarihi Column -->
+	  <ng-container matColumnDef="dogumTarihi">
+		<th mat-header-cell *matHeaderCellDef> Doğum Tarihi </th>
+		<td mat-cell *matCellDef="let element"> {{element.dogumTarihi}} </td>
+	  </ng-container>
+
+	  <!-- Cinsiyet Column -->
+	  <ng-container matColumnDef="cinsiyet">
+		<th mat-header-cell *matHeaderCellDef> Cinsiyet </th>
+		<td mat-cell *matCellDef="let element"> {{element.cinsiyet}} </td>
+	  </ng-container>
+
+	  <!-- Telefon Numarası Column -->
+	  <ng-container matColumnDef="telefonNumarasi">
+		<th mat-header-cell *matHeaderCellDef> Telefon Numarası </th>
+		<td mat-cell *matCellDef="let element"> {{element.telefonNumarasi}} </td>
+	  </ng-container>
+
+	  <!-- İş Yeri Column -->
+	  <ng-container matColumnDef="isYeri">
+		<th mat-header-cell *matHeaderCellDef> İş Yeri </th>
+		<td mat-cell *matCellDef="let element"> {{element.isYeri}} </td>
+	  </ng-container>
+
+	   <!-- Unvan Column -->
+	   <ng-container matColumnDef="unvan">
+		<th mat-header-cell *matHeaderCellDef> Unvan </th>
+		<td mat-cell *matCellDef="let element"> {{element.unvan}} </td>
+	  </ng-container>
+  
+	  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+
+  </div>
+  <div id="pencere">
+</div>

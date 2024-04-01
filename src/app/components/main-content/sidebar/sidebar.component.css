@@ -1,0 +1,16 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.sidebar ul li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+	list-style-type: none;
+}
+.buton{
+	width: 200px;
+	height: 50px;
+}
